@@ -24,6 +24,7 @@ int g_has_color = 1;
 int g_width = 0;
 bool g_input_avail;
 int g_input;
+char g_outputarg = 'a';
 
 #define RED   "\x1B[31m"
 #define GREEN   "\x1B[32m"
@@ -341,4 +342,21 @@ int set_width(char width)
 		return 1;
 
 	return 0;
+}
+
+char set_outputarg(char *output_arg)
+{
+    char outputval = 'a';
+    char argval = *output_arg;
+    if (tolower(argval) == 'd')
+        outputval = 'd';
+    else if (tolower(argval) == 'u')
+        outputval = 'u';
+    else if (tolower(argval) == 'h')
+        outputval = 'h';
+    else if (tolower(argval) == 'o')
+        outputval = 'o';
+    else if (tolower(argval) == 'b')
+        outputval = 'b';
+    return outputval;
 }

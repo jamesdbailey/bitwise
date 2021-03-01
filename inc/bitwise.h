@@ -61,6 +61,7 @@ typedef enum output_type {
 int lltostr(uint64_t val, char *buf, int base);
 int set_width(char width);
 void set_width_by_val(uint64_t val);
+char set_outputarg(char *output_arg);
 void die(const char *fmt, ...);
 int parse_input(const char *input, uint64_t *val);
 int validate_input(int ch, int base);
@@ -129,6 +130,7 @@ extern bool g_input_avail;
 extern int g_input;
 extern bool g_leave_req;
 extern uint64_t g_val;
+extern char g_outputarg;
 
 /* History */
 typedef enum history_type {
