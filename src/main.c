@@ -8,6 +8,7 @@
 #include <stdint.h>
 #include <getopt.h>
 #include <locale.h>
+#include <unistd.h>
 #include "bitwise.h"
 #include "shunting-yard.h"
 
@@ -140,53 +141,53 @@ int print_conversions(uint64_t val, bool si)
 
 static void print_version(void)
 {
-	printf(PACKAGE " " VERSION "\n");
+    printf(PACKAGE " " VERSION "\n");
 }
 
 static void print_help(FILE *out)
 {
-	fprintf(out, "Usage: bitwise [OPTION...] [expression]\n\n");
-	fprintf(out,
-	        "[expression] mathematical expression\n\n");
-	fprintf(out,
-	        "  -i, --interactive\t Load interactive mode (default if no input)\n");
-	fprintf(out, "  -w, --width[b|w|l|d]\t Set bit width (default: l)\n");
-	fprintf(out, "  -h, --help\t\t Display this help and exit\n");
-	fprintf(out, "  -v, --version\t\t Output version information and exit\n");
-	fprintf(out, "  -s, --si\t\t Print size according to SI standard. (default: IEC standard)\n");
+    fprintf(out, "Usage: bitwise [OPTION...] [expression]\n\n");
+    fprintf(out,
+            "[expression] mathematical expression\n\n");
+    fprintf(out,
+            "  -i, --interactive\t Load interactive mode (default if no input)\n");
+    fprintf(out, "  -w, --width[b|w|l|d]\t Set bit width (default: l)\n");
+    fprintf(out, "  -h, --help\t\t Display this help and exit\n");
+    fprintf(out, "  -v, --version\t\t Output version information and exit\n");
+    fprintf(out, "  -s, --si\t\t Print size according to SI standard. (default: IEC standard)\n");
     fprintf(out, "      --no-color\t Start without color support\n");
     fprintf(out, "  -o, --output[decimal|unsigneddecimal|hex|octal|binary|all]\t(default: all)\n\n");
 }
 
 int main(int argc, char *argv[])
 {
-	int c;
-	char width;
-    char outputarg;
-	int interactive = 0;
-	uint64_t val = 0;
-	int rc;
-	bool si = false;
+    int c;
+    char width;
+    char outputarg = 0;
+    int interactive = 0;
+    uint64_t val = 0;
+    int rc;
+    bool si = false;
 
 #ifdef TRACE
-	fd = fopen("log.txt", "w");
+    fd = fopen("log.txt", "w");
 #endif
 
-	setlocale(LC_ALL, "");
+    setlocale(LC_ALL, "");
 
-	while (1) {
-		static struct option long_options[] = {
-			{"no-color", no_argument, &g_has_color, 0},
-			{"version", no_argument, 0, 'v'},
-			{"help", no_argument, 0, 'h'},
-			{"interactive", no_argument, 0, 'i'},
-			{"si", no_argument, 0, 's'},
-			{"width", required_argument, 0, 'w'},
+    while (1) {
+        static struct option long_options[] = {
+            {"no-color", no_argument, &g_has_color, 0},
+            {"version", no_argument, 0, 'v'},
+            {"help", no_argument, 0, 'h'},
+            {"interactive", no_argument, 0, 'i'},
+            {"si", no_argument, 0, 's'},
+            {"width", required_argument, 0, 'w'},
             {"output", required_argument, 0, 'o'},
-			{0, 0, 0, 0}
-		};
+            {0, 0, 0, 0}
+        };
 
-		int option_index = 0;
+        int option_index = 0;
         c = getopt_long(argc, argv, "vhisw:o:", long_options, &option_index);
 
         if (c == -1)
@@ -207,7 +208,8 @@ int main(int argc, char *argv[])
             si = true;
             break;
         case 'o':
-            g_outputarg = set_outputarg(optarg);
+            outputarg = set_outputarg(optarg);
+            g_outputarg = outputarg;
             break;
         case 'w':
             width = *optarg;
@@ -220,49 +222,83 @@ int main(int argc, char *argv[])
             print_help(stderr);
             exit(EXIT_FAILURE);
         }
-	}
+    }
 
-	init_colors();
+    if (g_outputarg != 'a')
+    {
+        g_has_color = 0;
+    }
+    
+    init_colors();
 
-	if (optind < argc) { // non-interactive mode
-		uint32_t expr_len = argc - optind; // account for ' ' between args
-		for (int i = optind; i < argc; i++)
-			expr_len += strlen(argv[i]);
+    if (optind < argc || (!interactive && outputarg != 0)) { // non-interactive mode
+        uint32_t expr_len = argc - optind; // account for ' ' between args
+        char *expression;
+        uint32_t expr_pos = 0;
 
-		char *expression = malloc(sizeof(char) * expr_len);
-		if (expression == NULL) {
-			fprintf(stderr, "Error parsing arguments");
-			exit(EXIT_FAILURE);
-		}
+        if (expr_len > 0)
+        {
+            for (int i = optind; i < argc; i++)
+                expr_len += strlen(argv[i]);
 
-		uint32_t expr_pos = 0;
-		for (int i = optind; i < argc; i++) {
-			strncpy(&expression[expr_pos], argv[i], expr_len - expr_pos);
-			expr_pos += strlen(argv[i]);
-			expression[expr_pos++] = ' ';
-		}
-		expression[expr_pos - 1] = '\0';
+            expression = malloc(sizeof(char) * expr_len);
+            if (expression == NULL) {
+                fprintf(stderr, "Error parsing arguments");
+                exit(EXIT_FAILURE);
+            }
 
-		rc = shunting_yard(expression, &val);
-		if (rc) {
-			fprintf(stderr, "Couldn't parse expression: %s\n", expression);
-			print_help(stderr);
-			exit(EXIT_FAILURE);
-		}
-		free(expression);
-		if (!g_width)
-			set_width_by_val(val);
-		val &= MASK(g_width);
-		if (!interactive)
-			return print_conversions(val, si);
-	}
+            expr_pos = 0;
+            for (int i = optind; i < argc; i++) {
+                strncpy(&expression[expr_pos], argv[i], expr_len - expr_pos);
+                expr_pos += strlen(argv[i]);
+                expression[expr_pos++] = ' ';
+            }
+            expression[expr_pos - 1] = '\0';
+        }
+        else
+        {
+            char *bufferin = malloc(sizeof(char) * 1024);
+            ssize_t stdin_expr_len = 0;
+            if (bufferin == NULL)
+            {
+                fprintf(stderr, "Error parsing expression from stdin");
+                exit(EXIT_FAILURE);
+            }
+            stdin_expr_len = read(STDIN_FILENO, bufferin, sizeof(char) * 1024);
+            if (stdin_expr_len != 0)
+            {
+                bufferin[stdin_expr_len - 1] ='\0';
+                expression = malloc(sizeof(char) * stdin_expr_len);
+                strncpy(expression, bufferin, stdin_expr_len);
+                free(bufferin);
+            }
+            else
+            {
+                fprintf(stderr, "Error parsing expression from stdin");
+                exit(EXIT_FAILURE);
+            }
+        }
+        
+        rc = shunting_yard(expression, &val);
+        if (rc) {
+            fprintf(stderr, "Couldn't parse expression: %s\n", expression);
+            print_help(stderr);
+            exit(EXIT_FAILURE);
+        }
+        free(expression);
+        if (!g_width)
+            set_width_by_val(val);
+        val &= MASK(g_width);
+        if (!interactive)
+            return print_conversions(val, si);
+    }
 
-	if (!g_width)
-		g_width = 32;
-	start_interactive(val);
+    if (!g_width)
+        g_width = 32;
+    start_interactive(val);
 
 #ifdef TRACE
-	fclose(fd);
+    fclose(fd);
 #endif
-	return 0;
+    return 0;
 }
