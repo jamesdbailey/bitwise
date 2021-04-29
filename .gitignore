@@ -78,3 +78,7 @@ depcomp
 # tracing stuff
 log.txt
 .DS_Store
+*.sub~
+*.guess~
+*.guess
+*.sub
