@@ -77,3 +77,4 @@ depcomp
 
 # tracing stuff
 log.txt
+.DS_Store
