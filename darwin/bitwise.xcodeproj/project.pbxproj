@@ -7,12 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6D062F90263A87E2003FE11F /* libpanelw.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D062F8C263A87E2003FE11F /* libpanelw.a */; };
-		6D062F91263A87E2003FE11F /* libformw.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D062F8D263A87E2003FE11F /* libformw.a */; };
-		6D062F92263A87E2003FE11F /* libncursesw.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D062F8E263A87E2003FE11F /* libncursesw.a */; };
-		6D062F93263A87E2003FE11F /* libmenuw.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D062F8F263A87E2003FE11F /* libmenuw.a */; };
-		6D062F96263A87F8003FE11F /* libreadline.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D062F94263A87F8003FE11F /* libreadline.a */; };
-		6D062F97263A87F8003FE11F /* libhistory.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D062F95263A87F8003FE11F /* libhistory.a */; };
 		6D062FA5263A88A0003FE11F /* misc.c in Sources */ = {isa = PBXBuildFile; fileRef = 6D062F9E263A88A0003FE11F /* misc.c */; };
 		6D062FA6263A88A0003FE11F /* interactive.c in Sources */ = {isa = PBXBuildFile; fileRef = 6D062F9F263A88A0003FE11F /* interactive.c */; };
 		6D062FA7263A88A0003FE11F /* shunting-yard.c in Sources */ = {isa = PBXBuildFile; fileRef = 6D062FA0263A88A0003FE11F /* shunting-yard.c */; };
@@ -27,12 +21,12 @@
 		6D062FB2263A8BDF003FE11F /* interactive.c in Sources */ = {isa = PBXBuildFile; fileRef = 6D062F9F263A88A0003FE11F /* interactive.c */; };
 		6D062FB3263A8BDF003FE11F /* cmd.c in Sources */ = {isa = PBXBuildFile; fileRef = 6D062FA1263A88A0003FE11F /* cmd.c */; };
 		6D062FB4263A8BDF003FE11F /* misc.c in Sources */ = {isa = PBXBuildFile; fileRef = 6D062F9E263A88A0003FE11F /* misc.c */; };
-		6D062FB6263A8BDF003FE11F /* libmenuw.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D062F8F263A87E2003FE11F /* libmenuw.a */; };
-		6D062FB7263A8BDF003FE11F /* libncursesw.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D062F8E263A87E2003FE11F /* libncursesw.a */; };
-		6D062FB8263A8BDF003FE11F /* libreadline.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D062F94263A87F8003FE11F /* libreadline.a */; };
-		6D062FB9263A8BDF003FE11F /* libpanelw.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D062F8C263A87E2003FE11F /* libpanelw.a */; };
-		6D062FBA263A8BDF003FE11F /* libhistory.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D062F95263A87F8003FE11F /* libhistory.a */; };
-		6D062FBB263A8BDF003FE11F /* libformw.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D062F8D263A87E2003FE11F /* libformw.a */; };
+		6DE12ABD263AB42F002D5CD5 /* libhistory.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DE12ABB263AB42F002D5CD5 /* libhistory.a */; };
+		6DE12ABE263AB42F002D5CD5 /* libreadline.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DE12ABC263AB42F002D5CD5 /* libreadline.a */; };
+		6DE12AC3263AB46E002D5CD5 /* libpanelw.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DE12ABF263AB46E002D5CD5 /* libpanelw.a */; };
+		6DE12AC4263AB46E002D5CD5 /* libformw.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DE12AC0263AB46E002D5CD5 /* libformw.a */; };
+		6DE12AC5263AB46E002D5CD5 /* libmenuw.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DE12AC1263AB46E002D5CD5 /* libmenuw.a */; };
+		6DE12AC6263AB46E002D5CD5 /* libncursesw.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DE12AC2263AB46E002D5CD5 /* libncursesw.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -58,12 +52,6 @@
 
 /* Begin PBXFileReference section */
 		6D062ED7263A6B67003FE11F /* bitwise-arm64 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "bitwise-arm64"; sourceTree = BUILT_PRODUCTS_DIR; };
-		6D062F8C263A87E2003FE11F /* libpanelw.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libpanelw.a; path = /opt/homebrew/opt/lib/libpanelw.a; sourceTree = "<absolute>"; };
-		6D062F8D263A87E2003FE11F /* libformw.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libformw.a; path = /opt/homebrew/opt/lib/libformw.a; sourceTree = "<absolute>"; };
-		6D062F8E263A87E2003FE11F /* libncursesw.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libncursesw.a; path = /opt/homebrew/opt/lib/libncursesw.a; sourceTree = "<absolute>"; };
-		6D062F8F263A87E2003FE11F /* libmenuw.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libmenuw.a; path = /opt/homebrew/opt/lib/libmenuw.a; sourceTree = "<absolute>"; };
-		6D062F94263A87F8003FE11F /* libreadline.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libreadline.a; path = /opt/homebrew/opt/lib/libreadline.a; sourceTree = "<absolute>"; };
-		6D062F95263A87F8003FE11F /* libhistory.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libhistory.a; path = /opt/homebrew/opt/lib/libhistory.a; sourceTree = "<absolute>"; };
 		6D062F99263A887C003FE11F /* shunting-yard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "shunting-yard.h"; path = "../inc/shunting-yard.h"; sourceTree = "<group>"; };
 		6D062F9A263A887C003FE11F /* bitwise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = bitwise.h; path = ../inc/bitwise.h; sourceTree = "<group>"; };
 		6D062F9B263A887C003FE11F /* stack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = stack.h; path = ../inc/stack.h; sourceTree = "<group>"; };
@@ -76,6 +64,13 @@
 		6D062FA3263A88A0003FE11F /* stack.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = stack.c; path = ../src/stack.c; sourceTree = "<group>"; };
 		6D062FA4263A88A0003FE11F /* help.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = help.c; path = ../src/help.c; sourceTree = "<group>"; };
 		6D062FC0263A8BDF003FE11F /* bitwise-intel */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "bitwise-intel"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6DE12ABA263AA7B0002D5CD5 /* info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = info.plist; sourceTree = "<group>"; };
+		6DE12ABB263AB42F002D5CD5 /* libhistory.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libhistory.a; sourceTree = "<group>"; };
+		6DE12ABC263AB42F002D5CD5 /* libreadline.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libreadline.a; sourceTree = "<group>"; };
+		6DE12ABF263AB46E002D5CD5 /* libpanelw.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libpanelw.a; sourceTree = "<group>"; };
+		6DE12AC0263AB46E002D5CD5 /* libformw.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libformw.a; sourceTree = "<group>"; };
+		6DE12AC1263AB46E002D5CD5 /* libmenuw.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libmenuw.a; sourceTree = "<group>"; };
+		6DE12AC2263AB46E002D5CD5 /* libncursesw.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libncursesw.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,12 +78,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6D062F93263A87E2003FE11F /* libmenuw.a in Frameworks */,
-				6D062F92263A87E2003FE11F /* libncursesw.a in Frameworks */,
-				6D062F96263A87F8003FE11F /* libreadline.a in Frameworks */,
-				6D062F90263A87E2003FE11F /* libpanelw.a in Frameworks */,
-				6D062F97263A87F8003FE11F /* libhistory.a in Frameworks */,
-				6D062F91263A87E2003FE11F /* libformw.a in Frameworks */,
+				6DE12ABD263AB42F002D5CD5 /* libhistory.a in Frameworks */,
+				6DE12AC5263AB46E002D5CD5 /* libmenuw.a in Frameworks */,
+				6DE12AC3263AB46E002D5CD5 /* libpanelw.a in Frameworks */,
+				6DE12AC6263AB46E002D5CD5 /* libncursesw.a in Frameworks */,
+				6DE12ABE263AB42F002D5CD5 /* libreadline.a in Frameworks */,
+				6DE12AC4263AB46E002D5CD5 /* libformw.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,12 +91,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6D062FB6263A8BDF003FE11F /* libmenuw.a in Frameworks */,
-				6D062FB7263A8BDF003FE11F /* libncursesw.a in Frameworks */,
-				6D062FB8263A8BDF003FE11F /* libreadline.a in Frameworks */,
-				6D062FB9263A8BDF003FE11F /* libpanelw.a in Frameworks */,
-				6D062FBA263A8BDF003FE11F /* libhistory.a in Frameworks */,
-				6D062FBB263A8BDF003FE11F /* libformw.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,6 +100,7 @@
 		6D062ECE263A6B67003FE11F = {
 			isa = PBXGroup;
 			children = (
+				6DE12ABA263AA7B0002D5CD5 /* info.plist */,
 				6D062F9D263A888C003FE11F /* src */,
 				6D062F98263A8843003FE11F /* inc */,
 				6D062F8B263A87AD003FE11F /* lib */,
@@ -130,12 +120,12 @@
 		6D062F8B263A87AD003FE11F /* lib */ = {
 			isa = PBXGroup;
 			children = (
-				6D062F95263A87F8003FE11F /* libhistory.a */,
-				6D062F94263A87F8003FE11F /* libreadline.a */,
-				6D062F8D263A87E2003FE11F /* libformw.a */,
-				6D062F8F263A87E2003FE11F /* libmenuw.a */,
-				6D062F8E263A87E2003FE11F /* libncursesw.a */,
-				6D062F8C263A87E2003FE11F /* libpanelw.a */,
+				6DE12AC0263AB46E002D5CD5 /* libformw.a */,
+				6DE12AC1263AB46E002D5CD5 /* libmenuw.a */,
+				6DE12AC2263AB46E002D5CD5 /* libncursesw.a */,
+				6DE12ABF263AB46E002D5CD5 /* libpanelw.a */,
+				6DE12ABB263AB42F002D5CD5 /* libhistory.a */,
+				6DE12ABC263AB42F002D5CD5 /* libreadline.a */,
 			);
 			name = lib;
 			sourceTree = "<group>";
@@ -301,6 +291,8 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DSTROOT = $SRCROOT/build/pkgroot;
+				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -318,7 +310,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = /opt/homebrew/Cellar/readline/8.1/include;
-				MACOSX_DEPLOYMENT_TARGET = 11.3;
+				MACOSX_DEPLOYMENT_TARGET = 11.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -362,6 +354,8 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DSTROOT = $SRCROOT/build/pkgroot;
+				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -373,7 +367,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = /opt/homebrew/Cellar/readline/8.1/include;
-				MACOSX_DEPLOYMENT_TARGET = 11.3;
+				MACOSX_DEPLOYMENT_TARGET = 11.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				OTHER_CFLAGS = "";
@@ -384,48 +378,65 @@
 		6D062EDF263A6B67003FE11F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				LIBRARY_SEARCH_PATHS = (
-					/opt/homebrew/opt/ncurses/lib,
-					/opt/homebrew/opt/readline/lib,
-				);
+				ARCHS = arm64;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
+				INFOPLIST_FILE = "$(SRCROOT)/info.plist";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)";
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jamesdbailey.bitwise;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
 		6D062EE0263A6B67003FE11F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				LIBRARY_SEARCH_PATHS = (
-					/opt/homebrew/opt/ncurses/lib,
-					/opt/homebrew/opt/readline/lib,
-				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				ARCHS = arm64;
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 75J6C96V4Y;
+				INFOPLIST_FILE = "$(SRCROOT)/info.plist";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)";
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jamesdbailey.bitwise;
+				PRODUCT_NAME = bitwise;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};
 		6D062FBE263A8BDF003FE11F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = "$(SRCROOT)/info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					/usr/local/Homebrew/opt/ncurses/lib,
 					/usr/local/Homebrew/opt/readline/lib,
 				);
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
 		6D062FBF263A8BDF003FE11F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = "$(SRCROOT)/info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					/usr/local/Homebrew/opt/ncurses/lib,
 					/usr/local/Homebrew/opt/readline/lib,
 				);
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};

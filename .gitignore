@@ -83,3 +83,5 @@ log.txt
 *.guess
 *.sub
 *.xcuserstate
+darwin/build
+configure~
